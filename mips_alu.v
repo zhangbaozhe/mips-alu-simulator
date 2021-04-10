@@ -51,7 +51,7 @@ always @(ins, regA, regB) begin
         rt = regA;
     end
 
-    #10;
+    
     case (opcode)
         6'b000000: begin
             case (funct)
@@ -244,11 +244,7 @@ always @(ins, regA, regB) begin
             $display("ADDIU");
             flag[1] = 0;
             result = rs + rt;
-            if (result[31] != rs[31] && 
-                result[31] != rt[31])
-                flag[0] = 1;
-            else 
-                flag[0] = 0;
+            flag[0] = 0;
             flag[2] = (result == zero);
         end
 
