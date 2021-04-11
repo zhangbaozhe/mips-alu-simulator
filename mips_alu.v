@@ -187,7 +187,7 @@ always @(ins, regA, regB) begin
                 6'd03: begin
                     $display("SRA");
                     flag[1] = 0;
-                    result = rt >>> shamt;
+                    result = $signed(rt) >>> shamt;
                     flag[0] = 0;
                     flag[2] = (result == zero);
                 end
@@ -214,7 +214,7 @@ always @(ins, regA, regB) begin
                 6'd07: begin
                     $display("SRAV");
                     flag[1] = 0;
-                    result = rt >>> rs;
+                    result = $signed(rt) >>> rs;
                     flag[0] = 0;
                     flag[2] = (result == zero);
                 end
@@ -280,7 +280,7 @@ always @(ins, regA, regB) begin
 
         /* andi */
         6'd12: begin
-            $display("ADDI");
+            $display("ANDI");
             flag[1] = 0;
             result = rs & rt;
             flag[0] = 0;

@@ -1,0 +1,288 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm}
+\pagestyle{fancy}
+
+\author{ZHANG Baozhe}
+\date{\today}
+
+\begin{document}
+
+\hypertarget{header-n0}{%
+\section{\texorpdfstring{MIPS ALU Simulator
+}{MIPS ALU Simulator }}\label{header-n0}}
+
+\hypertarget{header-n2}{%
+\subsection{Project Overview}\label{header-n2}}
+
+This project is a simple MIPS ALU simulator which supports following
+instructions:
+
+\begin{verbatim}
+- add, addi, addu, addiu
+- sub, subu
+- and, andi, nor, or, ori, xor, xori
+- beq, bne, slt, slti, sltiu, sltu
+- lw, sw
+- sll, sllv, srl, srlv, sra, srav
+\end{verbatim}
+
+Actually, the true ALU in MIPS architecture only achieves: \texttt{and},
+\texttt{or}, \texttt{add}, \texttt{subtract},
+\texttt{set\ on\ less\ that}, \texttt{nor} by receiving specific opcodes
+and contents from two registers (or extended numbers, etc.) and
+outputing a 32-bit result and a 3-bit flag. And thus, some functions of
+the above instructions cannot be achived by the only ALU (e.g.,
+\texttt{lw}).
+
+\hypertarget{header-n13}{%
+\subsection{Projects Details}\label{header-n13}}
+
+This ALU is defined by its behaviors (not by its structure) in Verilog.
+For the specific file organization and project building instructions,
+they can be refered in the README file. Basically, to run the project only type 
+\begin{verbatim}
+> make
+\end{verbatim}
+in the terminal.
+
+\hypertarget{header-n17}{%
+\subsubsection{How the simulation works}\label{header-n17}}
+
+There are three steps for the simulaton to work: parsing the binary
+instruction, reading the input data, and outputing the results. The
+details of the three steps are elaborated as follows:
+
+\begin{itemize}
+\item
+  Parsing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{always}\NormalTok{ @(ins, regA, regB) }\KeywordTok{begin}
+\NormalTok{    opcode = ins[}\DecValTok{31}\NormalTok{:}\DecValTok{26}\NormalTok{];}
+\NormalTok{    funct  = ins[}\DecValTok{5}\NormalTok{:}\DecValTok{0}\NormalTok{];}
+\NormalTok{    shamt  = ins[}\DecValTok{10}\NormalTok{:}\DecValTok{6}\NormalTok{];}
+\NormalTok{    ...}
+    \KeywordTok{case}\NormalTok{ (opcode)}
+\NormalTok{        ...}
+    \KeywordTok{endcase}
+\KeywordTok{end}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Reading data: the instance of \texttt{mips\_alu} module reads the
+  instruction, regA, and regB data from three test files:
+  \texttt{INS\_DATA}, \texttt{REGA\_DATA}, and \texttt{REGB\_DATA},
+  respectively.
+\item
+  Output: the result of the specific instruction will be assigned to the
+  \texttt{result} and \texttt{flag}
+\end{itemize}
+
+\hypertarget{header-n53}{%
+\subsubsection{Test bench}\label{header-n53}}
+
+There are 135 instructions are tested in the test bench. There are a few
+notes in this simulation:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Zero detection is simultaneous performed;
+\item
+  For \texttt{beq} and \texttt{bne}, the negative flag will be set to 1
+  if the result is to branch;
+\item
+  For \texttt{slt} and related instructions, the negative flag will be
+  set to 1 if rs \textless{} rt;
+\item
+  For \texttt{lw} and \texttt{sw}, since there are no memory simulation
+  in this project, there are the two instructions only add the numbers
+  in rs and the offsets.
+\end{enumerate}
+
+Below are the part of the test results (some of the result may not be
+resonable, e.g., the inputs of \texttt{lw} or \texttt{sw}):
+\newpage
+\hypertarget{header-n54}{%
+\paragraph{Arithmetic \& logic instructions}\label{header-n54}}
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+INS(b) & REGA(h) & REGB(h) & RESULT(h) & FLAG(b) & INS
+NAME\tabularnewline
+\midrule
+\endhead
+00000000000000010000000000100000 & 00000001 & 00000002 & 00000003 & 000
+& ADD\tabularnewline
+00000000001000000000000000100000 & 7fffffff & 00000001 & 80000000 & 001
+& ADD\tabularnewline
+00000000001000000000000000100000 & 80000000 & 80000000 & 00000000 & 101
+& ADD\tabularnewline
+00000000000000010000000000100001 & ffffffff & 00000001 & 00000000 & 100
+& ADDU\tabularnewline
+00100000000000011111111111111111 & 80000000 & ffffffff (imm) & 7fffffff
+& 001 & ADDI\tabularnewline
+00100100000000011111111111111111 & 80000000 & ffffffff (imm) & 7fffffff
+& 000 & ADDIU\tabularnewline
+00000000000000010000000000100100 & 00000001 & ffffffff & 00000001 & 000
+& AND\tabularnewline
+00110000000000011111111111111111 & ffffffff & 0000ffff (imm) & 0000ffff
+& 000 & ANDI\tabularnewline
+00000000001000000000000000100110 & 80000000 & ffffffff & 7fffffff & 000
+& XOR\tabularnewline
+00000000000000010000000110000000 & xxxxxxxx & 7fffffff & ffffffc0 & 000
+& SLL\tabularnewline
+00000000000000010000000011000010 & xxxxxxxx & ffffffff & 1fffffff & 000
+& SRL\tabularnewline
+00000000001000000000000000000110 & 7fffffff & ffffffff & 00000000 & 100
+& SRLV\tabularnewline
+00000000000000010000011111000011 & xxxxxxxx & 80000000 & ffffffff & 000
+& SRA\tabularnewline
+00000000001000000000000000000111 & 7fffffff & ffffffff & 00000000 & 100
+& SRAV\tabularnewline
+00000000001000000000000000100010 & 80000000 & ffffffff & 7fffffff & 001
+& SUB\tabularnewline
+00000000001000000000000000100011 & 7fffffff & ffffffff & 80000000 & 000
+& SUBU\tabularnewline
+\bottomrule
+\end{longtable}
+
+Note that it is required for the immediate numbers of \texttt{andi},
+\texttt{ori}, and \texttt{xori} to be zero-extended.
+
+\hypertarget{header-n312}{%
+\paragraph{Branch \& slt instructions}\label{header-n312}}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+INS(b) & REGA(h) & REGB(h) & RESULT(h) & FLAG(b) & INS
+NAME\tabularnewline
+\midrule
+\endhead
+0001000000100000xxxxxxxxxxxxxxxx & 8000ffff & 80000000 & xxxxxxxx & 000
+& BEQ\tabularnewline
+0001010000000001xxxxxxxxxxxxxxxx & 00000001 & 00000000 & xxxxxxxx & 100
+& BNE\tabularnewline
+00000000000000010000000000101010 & 00000001 & ffffffff & 00000000 & 100
+& SLT\tabularnewline
+00101000000000011111111111111111 & 80000000 & ffffffff (imm) & 00000001
+& 010 & SLTI\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{header-n172}{%
+\paragraph{Load \& store instructions}\label{header-n172}}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+INS(b) & REGA(h) & REGB(h) & RESULT(h) & FLAG(b) & INS
+NAME\tabularnewline
+\midrule
+\endhead
+10001100000000011111111111111000 & 0000f001 & 00000009 & 0000f00a & 000
+& LW\tabularnewline
+10101100000000010000000000001001 & 0000f001 & 00000009 & 0000f00a & 000
+& SW\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
